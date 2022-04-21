@@ -8,6 +8,7 @@ import 'ant-design-vue/dist/antd.css'
 import router from './router'
 import store from './store'
 import i18n from "./lang"
+import './permission'
 
 const app = createApp(App)
 

@@ -6,7 +6,7 @@
           <HeaderNavCont/>
       </el-header>
       <el-container>
-        <el-aside width="220px" v-if="false">
+        <el-aside width="220px" v-if="menu">
           <sidebar/>
         </el-aside>
         <el-main>
@@ -22,6 +22,10 @@
 <script lang="ts" setup>
 import HeaderNavCont from "../components/HeaderNavCont/HeaderNavCont.vue";
 import sidebar from "../components/HeaderNavCont/sidebar.vue";
+import { computed } from "vue";
+import { useStore } from 'vuex';
+const store = useStore();
+let menu = computed(()=>{ return store.state.menu });
 
 
 </script>
