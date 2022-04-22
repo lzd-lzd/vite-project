@@ -1,5 +1,6 @@
 export default {
     "header": {
-        "chat": "chat"
+        "dashboard": "dashboard",
+        "logOut": "logOut"
     }
 }

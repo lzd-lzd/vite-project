@@ -9,25 +9,53 @@
       <el-col :span="6">
         <div class="handermes">
           <div class="handerMe">
-            <el-image fit="fill" v-if="!handers.isFullscreen" src="/src/assets/magnify.png" @click="clickFullscreen(true)" class="elImage"/>
-            <el-image fit="fill" v-else src="/src/assets/lessen.png" @click="clickFullscreen(false)" class="elImage"/>
+            <el-tooltip
+                class="box-item"
+                effect="dark"
+                content="放大/缩小"
+                placement="bottom"
+            >
+              <el-image fit="fill" v-if="!handers.isFullscreen" src="/src/assets/magnify.png" @click="clickFullscreen(true)" class="elImage"/>
+              <el-image fit="fill" v-else src="/src/assets/lessen.png" @click="clickFullscreen(false)" class="elImage"/>
+            </el-tooltip>
           </div>
           <div class="handerMe">
-            <HanderLang/>
+            <el-tooltip
+                class="box-item"
+                effect="dark"
+                content="语言切换"
+                placement="bottom"
+            >
+              <HanderLang/>
+            </el-tooltip>
           </div>
           <div class="handerM">
-            <ChangeTheme/>
+            <el-tooltip
+                class="box-item"
+                effect="dark"
+                content="主题色"
+                placement="bottom"
+            >
+              <ChangeTheme/>
+            </el-tooltip>
           </div>
           <div class="handerMe">
-            <HanderBadge/>
+            <el-tooltip
+                class="box-item"
+                effect="dark"
+                content="消息通知"
+                placement="bottom"
+            >
+              <HanderBadge/>
+            </el-tooltip>
           </div>
           <div>
             <el-dropdown trigger="click">
               <el-avatar :size="50" src="/src/assets/tuox.jpeg" />
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item>首页</el-dropdown-item>
-                  <el-dropdown-item divided>退出登录</el-dropdown-item>
+                  <el-dropdown-item>{{ $t('header.dashboard') }}</el-dropdown-item>
+                  <el-dropdown-item divided>{{ $t('header.logOut') }}</el-dropdown-item>
                 </el-dropdown-menu>
               </template>
             </el-dropdown>

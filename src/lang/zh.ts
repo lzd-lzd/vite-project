@@ -1,6 +1,6 @@
 export default {
     "header": {
-        "chat": "聊天"
+        "dashboard": "首页",
+        "logOut": "退出登录"
     }
-
 }
