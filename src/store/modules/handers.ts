@@ -1,19 +1,20 @@
 export default {
     namespaced: true,
     state: {
-        activeIndex: 2, //顶部导航栏
+        activeIndex: '/HomeMin', //顶部导航栏
         isFullscreen: false, //是否全屏
-        language: '简体中文' //语言
-    },
-    getters: {
-        activeIndex(state: any) { return state.activeIndex },
+        language: 'zh', //语言
+        color: "#000000", //颜色
     },
     mutations: {
         languag(state: any, name: any) {
             state.language = name
         },
-        isFscreen(state: any, name: any){
+        isFscreen(state: any, name: any) {
             state.isFullscreen = name
+        },
+        active(state: any, name: any){
+            state.activeIndex = name
         }
     }
 }

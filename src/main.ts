@@ -8,9 +8,12 @@ import 'ant-design-vue/dist/antd.css'
 import router from './router'
 import store from './store'
 import i18n from "./lang"
+import utils from "./utils/utils";
 import './permission'
 
 const app = createApp(App)
+
+app.config.globalProperties.utils = utils
 
 app.use(ElementPlus, {
     i18n: i18n,
