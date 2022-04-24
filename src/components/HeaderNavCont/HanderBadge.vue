@@ -6,11 +6,10 @@
       v-model="dialogVisible"
       title="消息通知"
       width="60%"
-      top="17vh"
       custom-class="my-info-dialog"
   >
     <el-row>
-      <el-col :span="4">
+      <el-col :span="3">
         <el-menu
             default-active="1"
             class="el-menu-vertical-demo-badge"
@@ -29,7 +28,7 @@
           </el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="20">
+      <el-col :span="21">
         <el-menu
             mode="horizontal"
             default-active="1"
@@ -49,7 +48,25 @@
           <el-table-column prop="name" />
           <el-table-column prop="address" />
         </el-table>
-
+        <div>
+          <div>
+            <el-button size="default">全选/取消</el-button>
+            已选 3 条数据
+            <el-button size="default">删除</el-button>
+          </div>
+          <el-config-provider :locale="zhCn">
+            <el-pagination
+                v-model:currentPage="currentPage4"
+                v-model:page-size="pageSize4"
+                :page-sizes="[10, 20, 40, 50, 100]"
+                :small="small"
+                :disabled="disabled"
+                pager-count="5"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="400"
+            />
+          </el-config-provider>
+        </div>
       </el-col>
     </el-row>
   </el-dialog>
@@ -57,6 +74,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { ElConfigProvider } from 'element-plus'
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 import {
   Menu as IconMenu,
   Message,
@@ -64,6 +83,12 @@ import {
 } from '@element-plus/icons-vue';
 
 let dialogVisible = ref(false);
+
+const currentPage4 = ref(1)
+
+const pageSize4 = ref(10)
+const small = ref(false)
+const disabled = ref(false)
 
 const tableData = [
   {

@@ -7,7 +7,7 @@
       </el-header>
       <el-container>
 <!--        左侧导航栏-->
-        <el-aside width="220px" v-if="menu">
+        <el-aside width="220px" v-if="menuMode">
           <sidebar/>
         </el-aside>
         <el-main>
@@ -22,11 +22,11 @@
 
 <script lang="ts" setup>
 import HeaderNavCont from "../components/HeaderNavCont/HeaderNavCont.vue";
-import sidebar from "../components/HeaderNavCont/sidebar.vue";
+import sidebar from "../components/sidebar/sidebar.vue";
 import { computed } from "vue";
 import { useStore } from 'vuex';
 const store = useStore();
-const menu = computed(()=>{ return store.state.menu });
+const menuMode = computed(()=>{ return store.state.menuMode });
 
 
 </script>
@@ -38,6 +38,9 @@ const menu = computed(()=>{ return store.state.menu });
   background-size: 100%;
   overflow: hidden;
   background-color: #f0f2f5;
+}
+.el-container {
+  height: 100%;
 }
 
 .el-header {
