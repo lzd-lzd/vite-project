@@ -5,13 +5,13 @@
       mode="horizontal"
       router
   >
-    <el-menu-item index="/HomeMin" @click="open('/HomeMin')">{{ $t('header.dashboard') }}</el-menu-item>
-    <el-menu-item index="/HomePage" @click="open('/HomePage')">{{ $t('header.personage') }}</el-menu-item>
-    <el-menu-item index="/hobby" @click="open('/hobby')">{{ $t('header.interest') }}</el-menu-item>
-    <el-menu-item index="/television" @click="open('/television')">{{ $t('header.TV') }}</el-menu-item>
-    <el-menu-item index="/track" @click="open('/track')">{{ $t('header.activity') }}</el-menu-item>
-    <el-menu-item index="/skill" @click="open('/skill')">{{ $t('header.skill') }}</el-menu-item>
-    <el-menu-item index="/note" @click="open('/note')">{{ $t('header.note') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/HomeMin" @click="open('/HomeMin')">{{ $t('header.dashboard') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/HomePage" @click="open('/HomePage')">{{ $t('header.personage') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/hobby" @click="open('/hobby')">{{ $t('header.interest') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/television" @click="open('/television')">{{ $t('header.TV') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/track" @click="open('/track')">{{ $t('header.activity') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/skill" @click="open('/skill')">{{ $t('header.skill') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/note" @click="open('/note')">{{ $t('header.note') }}</el-menu-item>
   </el-menu>
 </template>
 
@@ -35,5 +35,10 @@ const open = ( indexPath: any ) => {
 <style scoped>
 .el-menu-demo {
   border-bottom: none;
+}
+.el-menu_mo {
+  font-size: 15px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
 }
 </style>

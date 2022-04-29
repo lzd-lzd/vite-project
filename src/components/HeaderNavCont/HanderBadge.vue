@@ -81,7 +81,6 @@ import {
   Message,
   ChatDotSquare,
 } from '@element-plus/icons-vue';
-import axios from "axios";
 
 let dialogVisible = ref(false);
 const currentPage4 = ref(1);
@@ -89,13 +88,9 @@ const pageSize4 = ref(10);
 const small = ref(false);
 const disabled = ref(false);
 
-import '/src/mock/index';
 // const instance = getCurrentInstance().appContext.config.globalProperties.$mock;
 
-// console.log(instance.tab);
-axios.get('/api/getUsers').then(res=>{
-  console.log(res);
-})
+
 </script>
 
 <style lang="scss">

@@ -1,9 +1,9 @@
 <template>
     <el-row>
-      <el-col :span="7">
+      <el-col :span="3">
         <HanderSquare />
       </el-col>
-      <el-col :span="11">
+      <el-col :span="15">
         <HeaderMenu :active="handers.activeIndex"/>
       </el-col>
       <el-col :span="6">
@@ -99,18 +99,18 @@ const clickFullscreen =(isFscreen) =>{
   width: 40px;
   height: 40px;
 }
-.elMenuDemo {
-  background-color: #FFFFFF;
-  width: 100%;
-  margin-top: 1vh;
-  height: 40px;
-  border-bottom: none !important;
-  font-size: 20px;
-  .elMenuItem {
-    font-size: 15px;
-    font-weight: 500;
-  }
-}
+//.elMenuDemo {
+//  background-color: #FFFFFF;
+//  width: 100%;
+//  margin-top: 1vh;
+//  height: 40px;
+//  border-bottom: none !important;
+//  font-size: 30px;
+//  .elMenuItem {
+//    font-size: 30px;
+//    font-weight: 500;
+//  }
+//}
 .handermes {
   width: 100%;
   height:100%;
