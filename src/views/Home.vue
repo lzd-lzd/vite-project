@@ -5,17 +5,19 @@
 <!--        顶部导航栏-->
           <HeaderNavCont/>
       </el-header>
-      <el-container>
-<!--        左侧导航栏-->
-        <el-aside width="220px" v-if="menuMode">
-          <sidebar/>
-        </el-aside>
-        <el-main>
-          <keep-live>
-            <router-view/>
-          </keep-live>
-        </el-main>
-      </el-container>
+      <el-scrollbar :max-height="minHeight" noresize="false">
+        <el-container>
+          <!--        左侧导航栏-->
+          <el-aside width="220px" v-if="menuMode">
+            <sidebar/>
+          </el-aside>
+          <el-main>
+            <keep-live>
+              <router-view/>
+            </keep-live>
+          </el-main>
+        </el-container>
+      </el-scrollbar>
     </el-container>
   </div>
 </template>
@@ -27,7 +29,7 @@ import { computed } from "vue";
 import { useStore } from 'vuex';
 const store = useStore();
 const menuMode = computed(()=>{ return store.state.menuMode });
-
+let minHeight = document.body.clientWidth;
 
 </script>
 

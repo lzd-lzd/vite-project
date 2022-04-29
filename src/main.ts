@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import "/public/css/index.scss";
+import "/public/css/index.scss"
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import Antd from 'ant-design-vue'
@@ -8,12 +8,14 @@ import 'ant-design-vue/dist/antd.css'
 import router from './router'
 import store from './store'
 import i18n from "./lang"
-import utils from "./utils/utils";
+import utils from "./utils/utils"
+import req from "./request"
 import './permission'
 
 const app = createApp(App)
 
 app.config.globalProperties.utils = utils
+app.config.globalProperties.$http = req
 
 app.use(ElementPlus, {
     i18n: i18n,

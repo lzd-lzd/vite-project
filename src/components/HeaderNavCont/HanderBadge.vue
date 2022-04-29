@@ -42,13 +42,13 @@
             max-height="300"
             :row-style="{height:'50px'}"
             :show-header="false"
-            style="font-size: 16px;margin-top: 10px">
+            style="font-size: 16px;margin-top: 10px;border: 1px solid #F2F6FC;padding: 0 10px">
           <el-table-column type="selection" width="55" />
           <el-table-column prop="date" />
           <el-table-column prop="name" />
           <el-table-column prop="address" />
         </el-table>
-        <div>
+        <div class="boot">
           <div>
             <el-button size="default">全选/取消</el-button>
             已选 3 条数据
@@ -56,8 +56,8 @@
           </div>
           <el-config-provider :locale="zhCn">
             <el-pagination
-                v-model:currentPage="currentPage4"
-                v-model:page-size="pageSize4"
+                :currentPage="currentPage4"
+                :page-size="pageSize4"
                 :page-sizes="[10, 20, 40, 50, 100]"
                 :small="small"
                 :disabled="disabled"
@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 import {
@@ -81,58 +81,21 @@ import {
   Message,
   ChatDotSquare,
 } from '@element-plus/icons-vue';
+import axios from "axios";
 
 let dialogVisible = ref(false);
+const currentPage4 = ref(1);
+const pageSize4 = ref(10);
+const small = ref(false);
+const disabled = ref(false);
 
-const currentPage4 = ref(1)
+import '/src/mock/index';
+// const instance = getCurrentInstance().appContext.config.globalProperties.$mock;
 
-const pageSize4 = ref(10)
-const small = ref(false)
-const disabled = ref(false)
-
-const tableData = [
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-04',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
-  }
-]
-
+// console.log(instance.tab);
+axios.get('/api/getUsers').then(res=>{
+  console.log(res);
+})
 </script>
 
 <style lang="scss">
@@ -153,5 +116,10 @@ const tableData = [
  .my-info-dialog .el-dialog__body {
      padding: calc(var(--el-dialog-padding-primary) + 5px) var(--el-dialog-padding-primary);
    }
-
+.boot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 </style>

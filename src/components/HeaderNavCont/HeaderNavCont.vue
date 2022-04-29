@@ -120,10 +120,12 @@ const clickFullscreen =(isFscreen) =>{
 }
 .handerM {
   margin-right: 15px;
+  overflow: hidden;
 }
 .handerMe {
   margin-right: 15px;
-  margin-top: 6px
+  margin-top: 6px;
+  overflow: hidden;
 }
 .elImage {
   width: 2.5em;
