@@ -1,9 +1,9 @@
 <template>
     <el-row>
-      <el-col :span="3">
+      <el-col :span="2">
         <HanderSquare />
       </el-col>
-      <el-col :span="15">
+      <el-col :span="16">
         <HeaderMenu :active="handers.activeIndex"/>
       </el-col>
       <el-col :span="6">

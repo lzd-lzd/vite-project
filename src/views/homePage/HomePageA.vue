@@ -1,10 +1,10 @@
 <template>
-  aaaaaaaa
+111111
 </template>
 
 <script>
 export default {
-  name: "homePage"
+  name: "HomePageA"
 }
 </script>
 

@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "./views/Home.vue";
 import NotFound from "./views/NotFound.vue";
 
@@ -17,16 +17,7 @@ const routes = [{
                 import('@/views/Home/HomeMin.vue'),
             meta: {
                 menu: false
-            }
-            },
-            {
-                path: '/HomePage',
-                name: '个人主页',
-                component: () =>
-                    import('@/views/HomePage/HomePage.vue'),
-                meta: {
-                    menu: true
-                }
+              }
             },
             {
                 path: '/hobby',
@@ -76,6 +67,35 @@ const routes = [{
       ]
     },
     {
+        path: '/HomePage',
+        name: '个人主页',
+        component: Home,
+        children:[
+            { path: '/', redirect: 'HomePageHome' },
+            {
+                path: 'HomePageHome',
+                name: '个人主页',
+                component: () =>
+                    import('@/views/HomePage/HomePage.vue'),
+                meta: {
+                    menu: true
+                },
+            },
+            {
+                path: 'Azsx',
+                name: '个人主页',
+                component: () =>
+                    import('@/views/HomePage/HomePageA.vue')
+            },
+            {
+                path: 'Bzzz',
+                name: '个人主页',
+                component: () =>
+                    import('@/views/HomePage/HomePageB.vue')
+            },
+        ]
+    },
+    {
         path: '/:pathMatch(.*)',
         name: '/404',
         component: NotFound
@@ -83,7 +103,7 @@ const routes = [{
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes
 });
 

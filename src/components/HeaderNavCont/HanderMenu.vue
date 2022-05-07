@@ -6,7 +6,7 @@
       router
   >
     <el-menu-item class="el-menu_mo" index="/HomeMin" @click="open('/HomeMin')">{{ $t('header.dashboard') }}</el-menu-item>
-    <el-menu-item class="el-menu_mo" index="/HomePage" @click="open('/HomePage')">{{ $t('header.personage') }}</el-menu-item>
+    <el-menu-item class="el-menu_mo" index="/HomePage" @click="open('/HomePageHome')">{{ $t('header.personage') }}</el-menu-item>
     <el-menu-item class="el-menu_mo" index="/hobby" @click="open('/hobby')">{{ $t('header.interest') }}</el-menu-item>
     <el-menu-item class="el-menu_mo" index="/television" @click="open('/television')">{{ $t('header.TV') }}</el-menu-item>
     <el-menu-item class="el-menu_mo" index="/track" @click="open('/track')">{{ $t('header.activity') }}</el-menu-item>
@@ -35,10 +35,12 @@ const open = ( indexPath: any ) => {
 <style scoped>
 .el-menu-demo {
   border-bottom: none;
+  margin-left: 3vh;
 }
 .el-menu_mo {
   font-size: 15px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
+  margin: 0 10px;
 }
 </style>
